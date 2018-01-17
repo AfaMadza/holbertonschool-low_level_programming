@@ -1,3 +1,4 @@
+#include <stdio.h>
 /**
  * main - Returns the size of types
  *
@@ -5,7 +6,7 @@
  *section header: Prints out sizes next to types
  * Return: Returns a value of 0
 */
-#include <stdio.h>
+
 int main(void)
 {
 char c;
