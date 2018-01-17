@@ -1,4 +1,5 @@
-# holbertonschool-low_level_programming git init git add README.md git commit -m first commit git remote add origin git@github.com:AfaMadza/holbertonschool-low_level_programming.git git push -u origin master
-# holbertonschool-low_level_programming git init git add README.md git commit -m first commit git remote add origin git@github.com:AfaMadza/holbertonschool-low_level_programming.git git push -u origin master
-# holbertonschool-low_level_programming git init git add README.md git commit -m first commit git remote add origin https://github.com/AfaMadza/holbertonschool-low_level_programming.git git push -u origin master
-# holbertonschool-low_level_programming git init git add README.md git commit -m first commit git remote add origin https://github.com/AfaMadza/holbertonschool-low_level_programming.git git push -u origin master
+By the end of this project, students should be able to:
+-Compile files using gcc
+-Display sixe of types using sizeof
+-Print using printf, puts, and putchar
+-Explain what main () is
