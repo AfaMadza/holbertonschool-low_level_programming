@@ -8,7 +8,7 @@
 * section header: Prints last digit of string
 * Return: Return value is 0
 */
-int main()
+int main(void)
 {
 	int n;
 	int r;
@@ -25,7 +25,7 @@ int main()
 	{
 		printf("Last digit of %i is %i and is 0\n", n, r);
 	}
-	else if (r < 6 && r > 0)
+	else if (r < 6 && r != 0)
 	{
 		printf("Last digit of %i is %i and is less than 6 and not 0\n", n, r);
 	}
