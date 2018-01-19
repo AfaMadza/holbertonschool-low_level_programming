@@ -2,7 +2,7 @@
 #include <time.h>
 #include <stdio.h>
 /**
-* function_name - Short description, single line
+* main - See below
 *
 * Description: Returns values and states if its grater or less than another
 * section header: Returns values and blurd about it
@@ -14,7 +14,6 @@ int main(void)
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	/* your code goes there */
 	if (n > 0)
 	{
 		printf("%i is positive\n", n);
