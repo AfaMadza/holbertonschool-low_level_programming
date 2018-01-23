@@ -8,37 +8,32 @@
 */
 int main(void)
 {
-	int ones = 2;
-	int tens = 1;
-	int a = 2;
+	int ones = 0;
+	int tens = 0;
 	int hundo = 0;
-	int b = 0;
 
-	while (hundo <= 7)
+	while (hundo < 8)
 	{
-		while (tens <= 8)
+		tens = hundo + 1;
+		while (tens < 9)
 		{
-			while (ones <= 9)
+			ones = tens + 1;
+			while (ones < 10)
 			{
 				putchar(hundo + '0');
 				putchar(tens + '0');
 				putchar(ones + '0');
-				if (hundo !=7 || tens != 8 || ones != 9)
+				if (hundo < 7)
 				{
 					putchar(',');
 					putchar(' ');
 				}
 				ones++;
 			}
-			a++;
-			ones = a;
 			tens++;
 		}
-		b++;
-		hundo = b;
-	        tens = b + 1;
-		ones = b + 2;
-		}
+		hundo++;
+	}
 
 	putchar('\n');
 	return (0);
