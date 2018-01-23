@@ -14,27 +14,27 @@ void times_table(void)
 		{
 			if ((columns * rows) < 10)
 			{
-				_putchar((columns * rows) + '0');
-				_putchar(',');
-				_putchar(' ');
-				_putchar(' ');
-			}
-			else if ((columns * rows) > 10)
-			{
-				_putchar((columns * rows) / 10 + '0');
-				_putchar((columns * rows) % 10 + '0');
-				if (rows != 9)
+				if (rows != 0)
 				{
 					_putchar(',');
 					_putchar(' ');
+					_putchar(' ');
 				}
+				_putchar((columns * rows) + '0');
 			}
-			else
+			else if ((columns * rows) > 10)
 			{
+				_putchar(',');
+				_putchar(' ');
 				_putchar((columns * rows) / 10 + '0');
-                                _putchar((columns * rows) % 10 + '0');
-                                _putchar(',');
-                                _putchar(' ');
+				_putchar((columns * rows) % 10 + '0');
+			}
+			else if ((columns * rows) == 10)
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar((columns * rows) / 10 + '0');
+				_putchar((columns * rows) % 10 + '0');
 			}
 
 		}
