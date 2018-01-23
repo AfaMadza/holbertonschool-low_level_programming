@@ -1,0 +1,13 @@
+#include "holberton.h"
+/**
+* add - prints time from 0000hrs to 2359hrs
+* Return: Two values added
+*/
+int add(int x, int y)
+{
+	int z;
+
+	z = (x + y);
+
+	return (z);
+}
