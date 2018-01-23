@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
-* main - Use _putchar to print string
+* print_alphabet_x10 - Use _putchar to print string
 *
 *
 */
