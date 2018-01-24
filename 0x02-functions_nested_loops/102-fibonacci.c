@@ -5,12 +5,12 @@
 */
 int main(void)
 {
-	long long int x = 0, y = 1, z, i;
+	long int x = 0, y = 1, z, i;
 
 	for (i = 2; i <= 50; i++)
 	{
 		z = x + y;
-		printf("%llu", z);
+		printf("%lu", z);
 		if (i != 50)
 		{
 			putchar(',');
