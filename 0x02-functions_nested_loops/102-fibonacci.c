@@ -7,7 +7,7 @@ int main(void)
 {
 	unsigned long int x = 0, y = 1, z, i;
 
-	for (i = 2; i <= 50; i++)
+	for (i = 1; i <= 50; i++)
 	{
 		z = x + y;
 		printf("%lu", z);
