@@ -5,7 +5,7 @@
 */
 int main(void)
 {
-	unsigned long int x = 0, y = 1, z, i, sum=0;
+	unsigned long int x = 0, y = 1, z, i, sum = 0;
 
 	for (i = 1; i <= 33; i++)
 	{
