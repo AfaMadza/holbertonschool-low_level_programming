@@ -1,56 +1,52 @@
 #include "holberton.h"
 /**
-* Print_times_table - prints times table for n
+* print_times_table - prints times table for n
+* @n: Integer for which multiplication table will be created
 * Return: None
 */
 void print_times_table(int n)
 {
 	int columns;
 	int rows;
+	int digits;
 
-	if ( n > 15 || n < 0)
+	for (rows = 0; rows < (n + 1); rows++)
 	{
-		break;
-		for (; columns < (n*n); columns++)
+		for (columns = 0; columns < (n + 1); columns++)
 		{
-			for (; rows < (n*n); rows++)
+			if (n > 15 || n < 0)
 			{
-				if ((columns * rows) < 10)
-				{
-					if (rows != 0)
-					{
-						_putchar(',');
-						_putchar(' ');
-						_putchar(' ');
-						_putchar(' ');
-					}
-					_putchar((columns * rows) + '0');
-				else if ((columns * rows) > 10)
-				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar((columns * rows) / 10 + '0');
-					_putchar((columns * rows) % 10 + '0');
-				else if ((columns * rows) == 10)
-				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar((columns * rows) / 10 + '0');
-					_putchar((columns * rows) % 10 + '0');
-				}
-				else if ((columns * rows) > 100)
-				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar((columns * rows) / 100 + '0');
-					_putchar(((columns * rows) / 10) /10 + '0');
-					_putchar((columns * rows) % 10 + '0');
-				}
-
-
-				}
-				_putchar('\n');
+				return;
 			}
+			else if ((columns * rows) < 10)
+			{
+				digits = columns * rows;
+				format(digits);
+				_putchar(digits + '0');
+			}
+			else if ((columns * rows > 10) && (columns * rows <= 99))
+			{
+				digits = columns * rows;
+				format(digits);
+				_putchar((digits / 10) + '0');
+				_putchar((digits % 10) + '0');
+			}
+			else if ((columns * rows) == 10)
+			{
+				digits = columns * rows;
+				format(digits);
+				_putchar((digits / 10) + '0');
+				_putchar((digits % 10) + '0');
+			}
+			else if ((columns * rows) > 99)
+			{
+				digits = columns * rows;
+				format(digits);
+				_putchar((digits / 100) + '0');
+				_putchar(((digits / 10 ) % 10) + '0');
+				_putchar((digits % 10) + '0');
+			}
+		}
+		_putchar('\n');
+	}
 }
