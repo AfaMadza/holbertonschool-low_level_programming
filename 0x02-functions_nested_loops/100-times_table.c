@@ -14,36 +14,33 @@ void print_times_table(int n)
 	{
 		for (columns = 0; columns < (n + 1); columns++)
 		{
+			digits = columns * rows;
 			if (n > 15 || n < 0)
 			{
 				return;
 			}
 			else if ((columns * rows) < 10)
 			{
-				digits = columns * rows;
 				format(digits);
 				_putchar(digits + '0');
 			}
 			else if ((columns * rows > 10) && (columns * rows <= 99))
 			{
-				digits = columns * rows;
 				format(digits);
 				_putchar((digits / 10) + '0');
 				_putchar((digits % 10) + '0');
 			}
 			else if ((columns * rows) == 10)
 			{
-				digits = columns * rows;
 				format(digits);
 				_putchar((digits / 10) + '0');
 				_putchar((digits % 10) + '0');
 			}
 			else if ((columns * rows) > 99)
 			{
-				digits = columns * rows;
 				format(digits);
 				_putchar((digits / 100) + '0');
-				_putchar(((digits / 10 ) % 10) + '0');
+				_putchar(((digits / 10) % 10) + '0');
 				_putchar((digits % 10) + '0');
 			}
 		}
