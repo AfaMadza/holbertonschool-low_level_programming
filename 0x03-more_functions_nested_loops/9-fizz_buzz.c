@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
 * main - Replaces certain ints with strings
-* Return: 0
+* Return: function returns 0
 */
 int main(void)
 {
