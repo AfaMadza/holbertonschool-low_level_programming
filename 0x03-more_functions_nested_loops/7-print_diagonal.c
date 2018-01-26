@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
-* print_line - print n number of lines.
+* print_diagonal - print n number of lines.
 *
 * Return: None.
 * @n: number of times to print line.
