@@ -1,3 +1,4 @@
+int catnum(void);
 void convert(int);
 int _isdigit(int c);
 int mul(int a, int b);
