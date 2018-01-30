@@ -7,18 +7,19 @@
  */
 void puts_half(char *str)
 {
-	int i = 0;
-	int length = _strlen(str);
 
-	if (length % 2 != 0)
+	int i = 0;
+	int length_of_the_string = _strlen(str);
+
+	if (length_of_the_string  % 2 != 0)
 	{
-		i = (length - 1) / 2;
+		i = (length_of_the_string  - 1) / 2;
 	}
 	else
 	{
-		i = length / 2;
+		i = length_of_the_string  / 2;
 	}
-	while (i < length)
+	while (i < length_of_the_string )
 	{
 		_putchar(str[i]);
 		i++;
