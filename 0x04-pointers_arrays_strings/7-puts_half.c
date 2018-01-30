@@ -13,7 +13,7 @@ void puts_half(char *str)
 
 	if ((length_of_the_string  % 2) != 0)
 	{
-		i = (length_of_the_string  - 1) / 2;
+		i = (length_of_the_string + 1) / 2;
 	}
 	else if ((length_of_the_string % 2) == 0)
 	{
@@ -28,18 +28,18 @@ void puts_half(char *str)
 }
 
 /**
- * _strlen - returns length of a string
- *
- * @s: pointer to string whose length will be returned
- * Return: None
- */
+* _strlen - returns length of a string
+*
+* @s: pointer to string whose length will be returned
+* Return: None
+*/
 int _strlen(char *s)
 {
-        int length = 0;
+	int length = 0;
 
-        for (; *s != '\0'; s++)
-        {
-                length++;
-        }
-        return (length);
+	for (; *s != '\0'; s++)
+	{
+		length++;
+	}
+	return (length);
 }
