@@ -31,8 +31,8 @@ int isspecial(char x)
 /**
 * cap_string - capitalize all words of string.
 *
-* Return: s
 * @s: pointer to string
+* Return: string.
 */
 char *cap_string(char *s)
 {
