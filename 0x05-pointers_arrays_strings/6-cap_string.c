@@ -40,12 +40,11 @@ char *cap_string(char *s)
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (isspecial(s[i]) == 1 && isspecial(s[i + 1]) != 1)
+		if (isspecial(s[i]) == 1 /*&& isspecial(s[i + 1]) != 1*/)
 		{
-			i++;
-			if (s[i] >= 97 && s[i] <= 122)
+			if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
 			{
-				s[i] = s[i] - 32;
+				s[i + 1] = s[i + 1] - 32;
 			}
 		}
 
