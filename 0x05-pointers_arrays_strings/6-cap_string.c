@@ -40,6 +40,10 @@ char *cap_string(char *s)
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
+		if ( s[0] >= 'a' && s[0] <= 'z')
+		{
+			s[i] = s[i] - 32;
+		}
 		if (isspecial(s[i]) == 1)
 		{
 			if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
