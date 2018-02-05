@@ -8,10 +8,10 @@
 */
 char *_strpbrk(char *s, char *accept)
 {
-	while(*s)
+	while (*s)
 	{
 		if (_strchr(accept, *s++))
-			return (char*)--s;
+			return ((char *) --s);
 	}
 	return (0);
 }

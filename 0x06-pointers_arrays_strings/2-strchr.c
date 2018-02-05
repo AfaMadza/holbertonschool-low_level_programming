@@ -18,8 +18,6 @@ char *_strchr(char *s, char c)
 			p = (s + i);
 			break;
 		}
-		else
-			p = 0;
 	}
 	return (p);
 }
