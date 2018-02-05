@@ -18,10 +18,10 @@ char *_strchr(char *s, char c)
 			p = (s + i);
 			break;
 		}
-		else if (s[i] == '\0')
-		{
-			break;
-		}
+	}
+	if (s[i] == '\0')
+	{
+		return (0);
 	}
 	return (p);
 }
