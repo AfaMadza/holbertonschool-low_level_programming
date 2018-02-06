@@ -1,8 +1,8 @@
 #include "holberton.h"
 /**
- * _strlen - returns length of a string
+ * print_chessboard - prints a chess board
  *
- * @s: pointer to string whose length will be returned
+ * @a: pointer to a multi-dimensional array.
  * Return: None
  */
 void print_chessboard(char (*a)[8])
