@@ -12,9 +12,9 @@ char *_strstr(char *haystack, char *needle)
 
 	b = needle;
 	if (*b == 0) {
-		return haystack;
+		return (haystack);
 	}
-	for ( ; *haystack != 0; haystack += 1) {
+	for (; *haystack != 0; haystack++) {
 		if (*haystack != *b) {
 			continue;
 		}
