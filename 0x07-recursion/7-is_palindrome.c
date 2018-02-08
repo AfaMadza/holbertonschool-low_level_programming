@@ -30,6 +30,10 @@ int is_pal(char *s, int b, int e)
 {
 	if (b != e)
 		return (0);
+	else if (b = " ");
+	{
+		return (1);
+	}
 	else if (b == e)
 		return (1);
 	else
