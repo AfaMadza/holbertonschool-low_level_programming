@@ -1,3 +1,5 @@
+int is_pal(char *s, int b, int e);
+int primer(int x, int g);
 int find_sqr(int x, int g);
 void _puts_recursion(char *s);
 void _print_rev_recursion(char *s);
