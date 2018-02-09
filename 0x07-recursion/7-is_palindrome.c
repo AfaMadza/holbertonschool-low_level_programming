@@ -7,16 +7,13 @@
 */
 int is_palindrome(char *s)
 {
-	int length, b, e;
+	int length, i, l;
+	i = 0;
 
-	length = _strlen_recursion(s);
-	b = s[0];
-	e = s[length - 1];
+	l = _strlen_recursion(s);
+	length = l - 1;
 
-	if (*s == '\0')
-		return (1);
-	else
-		return (is_pal(s, b, e));
+	return (is_pal(s, i, length));
 }
 /**
 * is_pal - checks various cases for palindromic tendencies
@@ -26,14 +23,16 @@ int is_palindrome(char *s)
 * @e: end of string
 * Return: 0 or 1 for success or failures
 */
-int is_pal(char *s, int b, int e)
+int is_pal(char *s, int i, int length)
 {
-	if (b == e && b++ == e++)
+	if (length <= i)
 		return (1);
-	else if (b != e)
-		return (0);
+
+	if (s[i] == s[length])
+		return(is_pal(s, i + 1, length - 1));
+
 	else
-		return (is_pal(s, ++b, --e));
+		return(0);
 }
 /**
 * _strlen_recursion - returns length of string.
@@ -43,10 +42,10 @@ int is_pal(char *s, int b, int e)
 */
 int _strlen_recursion(char *s)
 {
-	if (*s == 0)
+	if (*s != '\0')
 	{
-		return (0);
+		return (1 + _strlen_recursion(s + 1));
 	}
 	else
-		return (1 + _strlen_recursion(s + 1));
+		return (0);
 }

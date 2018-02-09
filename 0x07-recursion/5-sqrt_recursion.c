@@ -32,5 +32,7 @@ int find_sqr(int x, int g)
 
 	if (x / g == g)
 		return (g);
+	else if (g > x / 2)
+		return (-1);
 	return (find_sqr(x, g + 1));
 }
