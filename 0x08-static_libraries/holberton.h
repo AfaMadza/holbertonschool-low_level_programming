@@ -1,3 +1,6 @@
+#ifndef HEADER_FILE
+#define HEADER_FILE
+
 int is_pal(char *s, int b, int e);
 int primer(int x, int g);
 int find_sqr(int x, int g);
@@ -66,3 +69,5 @@ void print_times_table(int n);
 void natural(void);
 int format(int);
 int _atoi(char *s);
+
+#endif
