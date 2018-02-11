@@ -65,3 +65,4 @@ void print_to_98(int n);
 void print_times_table(int n);
 void natural(void);
 int format(int);
+int _atoi(char *s);
