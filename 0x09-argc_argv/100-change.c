@@ -15,6 +15,8 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 		printf("Error\n");
+	else if (atoi(argv[1]) == 0)
+		printf("Error\n");
 	else
 	{
 		change = check_change(atoi(argv[1]));
