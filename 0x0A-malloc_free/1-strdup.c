@@ -17,13 +17,11 @@ char *_strdup(char *str)
 
 	if (str == NULL)
 		return (NULL);
-	/*if (s == NULL)
-	  return (NULL);*/
+	if (s == NULL)
+		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
 		s[i] = str[i];
 	s[_strlen(str) + 1] = '\0';
-	if (s == NULL)
-		return (NULL);
 	return (s);
 }
 /**

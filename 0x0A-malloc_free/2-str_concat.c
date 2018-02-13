@@ -13,21 +13,20 @@ char *str_concat(char *s1, char *s2)
 	int i;
 	int total_length = _strlen(s1) + _strlen(s2);
 
-	char *s = malloc(sizeof(char) * (_strlen(s1) + _strlen(s2)));
+	char *s = malloc(sizeof(char) * (_strlen(s1) + _strlen(s2) + 1));
 
+	if (s == NULL)
+		return (NULL);
 	if (s1 == NULL)
 		return ('\0');
 	if (s2 == NULL)
 		return ('\0');
-	for (i = 0; s1[i] != 0; i++)
+	for (i = 0; s1[i] != '\0'; i++)
 		s[i] = s1[i];
-	for (i = 0; s2[i] != 0; i++)
+	for (i = 0; s2[i] != '\0'; i++)
 		s[_strlen(s1) + i] = s2[i];
-	s[total_length] = '\0';
-	if (s == 0)
-		return (0);
-	else
-		return (s);
+	s[total_length + i] = '\0';
+	return (s);
 }
 /**
  * _strlen - returns length of a string
