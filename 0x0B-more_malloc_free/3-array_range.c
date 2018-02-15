@@ -4,8 +4,8 @@
 /**
 * array_range - allocates memory for an array, using malloc.
 *
-* @nmemb: number of elements in array.
-* @size: bytes each element should be allocated.
+* @min: min value of array.
+* @max: max value of array.
 * Return: None.
 */
 int *array_range(int min, int max)
