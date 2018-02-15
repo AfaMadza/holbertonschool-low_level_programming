@@ -4,8 +4,9 @@
 /**
 * string_nconcat - concatenates two strings up to first n bytes of s2.
 *
-* @s1: string to be concatenated
-* @s2: string to be concatenated
+* @s1: string to be concatenated.
+* @s2: string to be concatenated.
+* @n: number of bytes from s2 to be concatenated.
 * Return: pointer to concatenated string or NULL for failure.
 */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
@@ -20,6 +21,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 
 	total_length = _strlen(s1) + n + 1;
+	if (n >= _strlen(s2))
+		total_length = _strlen(s1) + _strlen(s2) + 1;
+
 	s = malloc(sizeof(char) * total_length);
 
 	if (s == NULL)
