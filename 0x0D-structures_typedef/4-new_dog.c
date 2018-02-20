@@ -19,11 +19,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (name == NULL || owner == NULL)
 		return (NULL);
 
-	n = malloc(sizeof(name));
+	n = malloc(sizeof(char) * (_strlen(name) + 1));
 	if (n == NULL)
 		return (NULL);
 
-	o = malloc(sizeof(owner));
+	o = malloc(sizeof(char) * (_strlen(owner) + 1));
 	if (o == NULL)
 	{
 		free(n);
@@ -38,14 +38,30 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	for (i = 0; name[i] != '\0'; i++)
 		n[i] = name[i];
-	n[i + 1] = '\0';
+	n[i] = '\0';
 	for (i = 0; owner[i] != '\0'; i++)
 		o[i] = owner[i];
-	o[i + 1] = '\0';
+	o[i] = '\0';
 
 	new_dog->name = n;
 	new_dog->age = age;
 	new_dog->owner = o;
 	return (new_dog);
 
+}
+/**
+ * _strlen - returns length of a string
+ *
+ * @s: pointer to string whose length will be returned
+ * Return: None
+ */
+int _strlen(char *s)
+{
+	int length = 0;
+
+	for (; *s != '\0'; s++)
+	{
+		length++;
+	}
+	return (length);
 }
