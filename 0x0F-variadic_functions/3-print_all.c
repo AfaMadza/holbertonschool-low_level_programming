@@ -21,7 +21,6 @@ void print_all(const char * const format, ...)
 	int j = 0;
 	char *sep = "";
 	char *sep2 = ", ";
-
 	va_list args;
 
 	va_start(args, format);
@@ -32,8 +31,8 @@ void print_all(const char * const format, ...)
 			if (format[j] == *arg_format[i].op)
 			{
 				printf("%s", sep);
-				sep = sep2;
 				arg_format[i].f(args);
+				sep = sep2;
 			}
 			i++;
 		}
