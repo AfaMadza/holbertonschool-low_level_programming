@@ -10,6 +10,7 @@
  */
 void print_all(const char * const format, ...)
 {
+	va_list args;
 	op_t arg_format[] = {
 		{"c", print_ch},
 		{"i", print_in},
@@ -21,7 +22,6 @@ void print_all(const char * const format, ...)
 	int j = 0;
 	char *sep = "";
 	char *sep2 = ", ";
-	va_list args;
 
 	va_start(args, format);
 	while (format != NULL && format[j] != '\0')
@@ -77,7 +77,7 @@ void print_st(va_list args)
 	s = va_arg(args, char *);
 	if (s == NULL)
 	{
-		printf("(nil)\n");
+		printf("(nil)");
 		return;
 	}
 	printf("%s", s);
