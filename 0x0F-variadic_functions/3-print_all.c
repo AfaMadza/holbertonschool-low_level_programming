@@ -23,7 +23,11 @@ void print_all(const char * const format, ...)
 	char *sep2 = ", ";
 
 	va_list args;
-
+	if (format == NULL)
+	{
+		printf("\n");
+		return;
+	}
 	va_start(args, format);
 	while (format[j] != '\0')
 	{
