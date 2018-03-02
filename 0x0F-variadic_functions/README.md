@@ -1,4 +1,4 @@
-# Low Level Programming
+# Variadic Functions
 At the end of this project, students should be able to:
 
 * Explain what variadic functions are.
