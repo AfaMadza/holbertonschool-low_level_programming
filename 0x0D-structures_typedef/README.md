@@ -1,14 +1,19 @@
 # Structures and Typedef
 At the end of this project, students should be able to:
 
-* Explain what structures are and detail how and when to use them.
-* Use typedef
+* Understand structures ``struct`` and how to use them
+* Understand what ``typedef`` does and how to use it
+* Define structs in header files
 
 ## Environment
 
 * __OS:__ Ubuntu 14.04 LTS
 * __Compiler:__ gcc 4.8.4 (C90)
 * __Language:__ C
+
+## Primary Concepts Learned
+
+* ``struct``, ``typedef``
 
 ## Author
 
