@@ -14,7 +14,7 @@ At the end of this project, students should be able to:
 
 ### New commands / functions learned
 
-* ``malloc``, ``free``, ``valgrind``
+* ``malloc``, ``free``, and ``valgrind``
 
 ## Author
 
