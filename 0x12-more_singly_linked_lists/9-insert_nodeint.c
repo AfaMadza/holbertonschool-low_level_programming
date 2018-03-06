@@ -12,30 +12,26 @@
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	unsigned int i = 0;
-	listint_t *newNode;
-	listint_t *currNode;
+	listint_t *new, *aft, *prev, *temp;
 
-	newNode = malloc(sizeof(listint_t));
-	if (newNode == NULL)
+	if (head == NULL || idx > num_nodes(*head))
 		return (NULL);
-	newNode->n = n;
-
-	if (*head == NULL)
-		return (newNode);
 	else if (idx == 0)
-	{
 		return (add_nodeint(head, n));
-	}
-	currNode = *head;
+	else if (idx == num_nodes(*head))
+		return (add_nodeint_end(head, n));
 
-	for (; i < idx - 1; i++)
-		currNode = currNode->next;
-	if (currNode == NULL)
+	new = malloc(sizeof(listint_t));
+	if (new == NULL)
 		return (NULL);
-	newNode->next = currNode->next;
-	currNode->next = newNode;
-	return (*head);
-
+	temp = *head;
+	for (; i < idx - 1; i++)
+		temp = temp->next;
+	prev = temp;
+	aft = temp->next;
+	prev->next = new;
+	new->next = aft;
+	return (new);
 }
 /**
  * add_nodeint - prints all the elements of a list_t list.
@@ -54,4 +50,20 @@ listint_t *add_nodeint(listint_t **head, const int n)
 	*head = temp;
 
 	return (*head);
+}
+/**
+ * num_nodes - counts the number of nodes in a linked list.
+ *@head: pointer to linked list.
+ *Return: number of nodes.
+ */
+size_t num_nodes(const listint_t *head)
+{
+	size_t i = 0;
+
+	while (head != NULL)
+	{
+		i++;
+		head = head->next;
+	}
+	return (i);
 }
