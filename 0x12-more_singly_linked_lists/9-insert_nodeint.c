@@ -12,36 +12,41 @@
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	unsigned int i = 0;
-	listint_t *temp2;
-	listint_t *temp1;
+	listint_t *newNode;
+	listint_t *currNode;
+
+	newNode = malloc(sizeof(listint_t));
+	newNode->n = n;
 
 	if (*head == NULL)
-		return (0);
+		return (newNode);
+	else if (idx == 0)
+		return (add_nodeint(head, n));
+	currNode = *head;
 
-	temp1 = malloc(sizeof(listint_t));
-	if (temp1 == NULL)
+	for (; i < idx - 1; i++)
+		currNode = currNode->next;
+	newNode->next = currNode->next;
+	currNode->next = newNode;
+
+	return (*head);
+
+}
+/**
+ * add_nodeint - prints all the elements of a list_t list.
+ *@head: double pointer to start of list.
+ *@n: int member for node to be added.
+ * Return: address of new element.
+ */
+listint_t *add_nodeint(listint_t **head, const int n)
+{
+	listint_t *temp = malloc(sizeof(listint_t));
+
+	if (temp == NULL)
 		return (NULL);
-	temp1->n = n;
-	temp1->next = NULL;
+	temp->n = n;
+	temp->next = *head;
+	*head = temp;
 
-	if (n == 1 || n == 0)/*if inserting at head*/
-	{
-		temp1->next = *head;
-		*head = temp1;
-		return (temp1);
-	}
-	temp2 = *head;
-
-	for (; i < idx - 2; i++)/*idx - 2 iterates to node before idx*/
-	{
-		temp2 = temp2->next;
-	}
-	if (i == idx - 2)
-	{
-		temp1->next = temp2->next;
-		temp2->next = temp1;
-		return (temp2);
-	}
-	return (NULL);/*if we reach this point, then idx is invalid*/
-
+	return (*head);
 }
