@@ -15,7 +15,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	listint_t *next;
 
 	if (head == NULL || *head == NULL)
-		return (0);
+		return (-1);
 	temp = *head;
 
 	if (index == 0)/*if head needs to be deleted*/
@@ -27,7 +27,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	for (; temp != NULL && i < index - 1; i++)/*iterate to node before index*/
 		temp = temp->next;
 	if (temp == NULL || temp->next == NULL)/*for invalid index*/
-		return (0);
+		return (-1);
 	next = temp->next->next;
 	/*temp->next is the node we want to delete, so we need to store the*/
 	  /*  pointer for the node after temp->next*/
