@@ -12,8 +12,8 @@ void free_listint2(listint_t **head)
 	listint_t *i = *head;
 	listint_t *next = NULL;
 
-	if (*head == NULL)
-		exit(0);
+	if (head == NULL || *head == NULL)
+		return;
 
 	for (; i != NULL; i = next)
 	{
