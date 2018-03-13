@@ -1,9 +1,3 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
 #include "holberton.h"
 /**
  * read_textfile - reads a text file and prints it to STDOUT.
@@ -30,8 +24,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	read(fd, buf, letters);
 	buf[letters] = '\0';
 
-	close(fd);
-
 	/* write */
 	for (i = 0; buf[i] != '\0'; i++)
 	{
@@ -39,6 +31,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 			_putchar(buf[i]);
 	}
 	len = i;
+	close(fd);
 	free(buf);
 	return (len);
 }
@@ -51,5 +44,5 @@ ssize_t read_textfile(const char *filename, size_t letters)
  */
 int _putchar(char c)
 {
-	return (write(1, &c, 1));
+	return (write(STDOUT_FILENO, &c, 1));
 }

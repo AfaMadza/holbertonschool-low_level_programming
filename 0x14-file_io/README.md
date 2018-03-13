@@ -1,7 +1,12 @@
-# Bit Manipulation
+# File I/O
 At the end of this project, students should be able to:
 
-* Manipulate bits and use bitwise operators
+* Create, open, close, read and write files
+* Explain what file descriptors are.
+* Discuss standard file descriptors, their purpose and POSIX names.
+* Use flags ``O_RDONLY``, ``O_WRONLY``, ``O_RDWR``
+* Explain what a system call is.
+* Differentiate between function and system calls.
 
 ## Environment
 
@@ -11,7 +16,7 @@ At the end of this project, students should be able to:
 
 ### Primary Concepts
 
-* ``&``, ``^``, ``|``, ``~``
+* ``open``, ``close``, ``read``, ``write``, ``O_RDONLY``, ``O_WRONLY``, ``O_RDWR``
 
 ## Author
 
