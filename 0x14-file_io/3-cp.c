@@ -30,6 +30,11 @@ int main(int argc, char *argv[])
 	}
 	while ((char_count = read(fd1, buf, sizeof(buf))) > 0)
 	{
+		if (char_count == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			exit(98);
+		}
 		char_count = write(fd2, buf, char_count);
 		if (char_count == -1)
 		{
