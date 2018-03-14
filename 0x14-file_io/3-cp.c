@@ -7,7 +7,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int fd1, fd2, char_count;
+	int fd1, fd2, char_countr, char_countw;
 	char buf[1024];
 
 	if (argc != 3)
@@ -28,17 +28,21 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	while ((char_count = read(fd1, buf, sizeof(buf))) > 0)
+	char_countr = 1024;
+	while (char_countr == 1024)
 	{
-		if (char_count == -1)
+		char_countr = read(fd1, buf, 1024);
+		if (char_countr == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			dprintf(STDERR_FILENO,
+				"Error: Can't read from file %s\n", argv[1]);
 			exit(98);
 		}
-		char_count = write(fd2, buf, char_count);
-		if (char_count == -1)
+		char_countw = write(fd2, buf, char_countr);
+		if (char_countw == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			dprintf(STDERR_FILENO,
+				"Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
 	}
