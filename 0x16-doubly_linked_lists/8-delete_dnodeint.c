@@ -49,17 +49,18 @@ void delete_node(dlistint_t **head, unsigned int index)
  */
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-	dlistint_t *node = head;
-	unsigned int counter = 1;
+	unsigned int counter = 0;
 
-	if (index > dlistint_len(node))
+	if (head == NULL)
 		return (NULL);
-	while (node->next != NULL && counter != index)
+	while (counter < index)
 	{
-		node = node->next;
 		counter++;
+		head = head->next;
+		if (head == NULL)
+			return (NULL);
 	}
-	return (node);
+	return (head);
 }
 /**
  * dlistint_len - returns the number of elements in a doubly  linke list
