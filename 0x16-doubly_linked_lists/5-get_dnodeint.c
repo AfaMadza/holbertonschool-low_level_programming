@@ -40,13 +40,5 @@ size_t dlistint_len(const dlistint_t *h)
 			node_num++;
 		}
 	}
-	else
-	{
-		while (node != NULL)
-		{
-			node = node->prev;
-			node_num++;
-		}
-	}
 	return (node_num);
 }
